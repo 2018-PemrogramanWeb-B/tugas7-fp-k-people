@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 
 <html>
-
-
 <?php
    session_start();
    if(isset($_SESSION['username'])) {
    header('location:indexkuy.php'); }
    require_once("koneksi.php");
 ?>
-
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -44,7 +39,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#log-in">Beranda</a>
+          <a class="nav-link js-scroll-trigger" href="index.php">Beranda</a>
         </li>
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="#log-in">Komunitas</a>
