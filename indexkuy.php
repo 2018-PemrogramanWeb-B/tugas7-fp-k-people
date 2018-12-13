@@ -5,8 +5,8 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])) {
-   header('location:login.php'); 
-} else { 
+   header('location:login.php');} 
+ else { 
    $username = $_SESSION['username']; 
 }
 ?>
@@ -44,13 +44,16 @@ if(!isset($_SESSION['username'])) {
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#beranda">Beranda</a>
+              <a class="nav-link js-scroll-trigger" href="indexkuy.php #beranda">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#komunitas">Komunitas</a>
+              <a class="nav-link js-scroll-trigger" href="indexkuy.php #komunitas">Komunitas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#event">Event</a>
+              <a class="nav-link js-scroll-trigger" href="indexkuy.php #event">Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="indexkuy.php #kontak">Contact Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="logout.php">Logout</a>
@@ -61,12 +64,11 @@ if(!isset($_SESSION['username'])) {
     </nav>
 
     <!-- Header -->
-    <header class="masthead">
+    <header class="masthead" id="beranda">
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Welcome To Our Community!</div>
           <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-<!--          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a> -->
         </div>
       </div>
     </header>
@@ -78,8 +80,12 @@ if(!isset($_SESSION['username'])) {
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Komunitas</h2>
             <h3 class="section-subheading text-muted">Lets have fun !.</h3>
+        <h3 class="minor-subheading">Mau Komunitas kamu di posting? Klik tombol di bawah ini</h3>
+        <input type='button' value='Daftarkan Komunitasmu' onClick='top.location="form_komunitas.php"'>
+       <br>
           </div>
         </div>
+        
         <div class="row">
           <div class="col-md-4 col-sm-6 portfolio-item">
             <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1komunitas">
@@ -88,7 +94,7 @@ if(!isset($_SESSION['username'])) {
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid rounded-circle" src="img/portfolio/01-thumbnail.jpg" alt="">
+              <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">    
             </a>
             <div class="portfolio-caption">
               <h4>ADDHAMEDA NATION</h4>
@@ -176,6 +182,9 @@ if(!isset($_SESSION['username'])) {
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">Event</h2>
             <h3 class="section-subheading text-muted">Lets have fun again!</h3>
+            <h3 class="minor-subheading">Mau promosi event kamu? Klik tombol di bawah ini</h3>
+        <input type='button' value='Daftarkan Eventmu' onClick='top.location="form_event.php"'>
+          <br>
           </div>
         </div>
         <div class="row">
@@ -267,231 +276,58 @@ if(!isset($_SESSION['username'])) {
       </div>
     </section>
 
+  <section class="bg-light" id="kontak">
+  <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Punya pertanyaan?</h3>
+        <h3 class="minor-subheading">Hubungi kami lewat media sosial berikut, atau tinggalkan pesan <a href="kontak.php">disini</a></h3>
+          <br>
+          <div class="row">
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <img class="img-icon" src="img/portfolio/index.png" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index2.png" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index3.jpg" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index4.jpg" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          </div>
+          </div>
+        </div>
+        </div>
+  </section>
+
     <!-- Footer -->
     <footer>
       <div class="container">
             <span class="copyright">Copyright &copy; K-People 2018</span>
           </div>
     </footer>
-
-    <!-- Komunitas Modals -->
-
-    <!-- Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Explore</li>
-                    <li>Category: Graphic Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Finish</li>
-                    <li>Category: Identity</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Lines</li>
-                    <li>Category: Branding</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Southwest</li>
-                    <li>Category: Website Design</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6komunitas" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Window</li>
-                    <li>Category: Photography</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Contact form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
   </body>
 </html>
