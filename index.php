@@ -44,6 +44,9 @@
               <a class="nav-link js-scroll-trigger" href="#event">Event</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#kontak">Contact Us</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="login.php">Login</a>
             </li>
             <li class="nav-item">
@@ -86,6 +89,54 @@
         </div>
         </div>
     </section>
+
+ <section class="bg-light" id="kontak">
+  <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Punya pertanyaan?</h3>
+        <h3 class="minor-subheading">Hubungi kami lewat media sosial berikut, atau tinggalkan pesan <a href="kontak.php">disini</a></h3>
+          <br>
+          <div class="row">
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+              <img class="img-icon" src="img/portfolio/index.png" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index2.png" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index3.jpg" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          <div class="col-md-3 col-sm-5 portfolio-item">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                </div>
+              </div>
+          <img class="img-icon" src="img/portfolio/index4.jpg" alt="">   
+            <h6>@lalala</h6>
+          </div>
+          </div>
+          </div>
+        </div>
+        </div>
+  </section>
+
 
     <!-- Footer -->
     <footer>
