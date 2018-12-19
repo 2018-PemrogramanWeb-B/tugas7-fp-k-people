@@ -26,7 +26,7 @@ function test_input($data) {
 
 <h2>Form Pendaftaran</h2>
 <div class="login-box">
-<form method="post" action="daftar_berhasil.php">
+<form method="post" action="login.php">
   <p>Username: <input type="text" name="username">
   <br></p>
   <p>E-mail: <input type="text" name="email">
