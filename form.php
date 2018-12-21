@@ -31,7 +31,7 @@ include 'koneksi.php';
 		if(empty($username)){
 			$usernameErr = "Username masih kosong.<br>";
     }
-    if(strlen($password) <= 8){
+    if(strlen($password) < 8){
 			$valid_panjang_pass = false;
 			$valid_panjang_pass_msg = "Password minimal 8 digit.<br>";
 		}
@@ -50,12 +50,14 @@ include 'koneksi.php';
 		
 		// Cek semua input sudah diisi apa belum
 		if(!empty($username) and !empty($password) and $email_valid){
-      mysqli_query($connect, "INSERT INTO login (username,email,password) VALUES ('$username','$email','$password')");
-    
-    }
-		
-	}
+    $insert=mysqli_query($connect, "INSERT INTO login (username,email,password) VALUES ('$username','$email','$password')");
+    if($insert){
+      header('Location:login.php');
+  }
+}
+  }
 ?>
+
 
 <head>
     <meta charset="utf-8">
@@ -120,7 +122,7 @@ include 'koneksi.php';
 
 <section id="sign-up">
 <div class="login-box">
-<form method="post" action="login.php">
+<form method="post" action="form.php">
   <h3>Silahkan Daftar di sini</h3>
   <br>
   <p>Username: <input type="text" name="username" value="<?php echo $username; ?>"><br>
@@ -133,7 +135,7 @@ include 'koneksi.php';
 		<?php echo $passErr.$valid_panjang_pass_msg; ?>
   <br></p>
   <br>
-  <input type="submit" name="btn-signup" value="Sign Up">
+  <input type="submit" name="btn-signup" value="Sign up">
 </form>
 </div>
 </section>
