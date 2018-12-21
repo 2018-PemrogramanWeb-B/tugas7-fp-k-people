@@ -4,11 +4,20 @@
 <?php
 include 'koneksi.php';
 
+
+$emailErr = "";
+$email_valid = true;
+$valid_email_konfirm_msg = "";
+
 if (@$_POST['btn-kom']) {
 
   $nama = $_POST['nama'];
   $alamat = $_POST['alamat'];
   $email = $_POST['email'];
+  if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $email_valid = false;
+    $valid_email_konfirm_msg = "Format email salah.<br>"; 
+  }
   $line = $_POST['line'];
   $instagram = $_POST['instagram'];
   $twitter = $_POST['twitter'];
@@ -17,16 +26,12 @@ if (@$_POST['btn-kom']) {
   $name_p = $_FILES['foto']['name'];
   $sumber_p = $_FILES['foto']['tmp_name'];
   move_uploaded_file($sumber_p,$folder.$name_p);
+  if($email_valid){
   mysqli_query($connect, "INSERT INTO komunitas (nama,alamat,email,line,instagram,twitter,deskripsi,foto) VALUES ('$nama','$alamat','$email','$line','$instagram','$twitter','$deskripsi','.$name_p.')");
-
-?>
-<script type="text/javascript">
-  alert("Komunitas berhasil terdaftar. Tunggu Email dari kami yaaa!");
-  window.location.href="indexkuy.php"
-
-</script>
-
-<?php  }
+  unset($_POST);
+  unset($_POST['email']);
+}
+  }
  ?>
 
 <head>
@@ -102,7 +107,8 @@ if (@$_POST['btn-kom']) {
 <p>Alamat :</p>
 <input type="text" name="alamat"><br/>
 <p>Email :</p>
-<input type="text" name="email"><br/>
+<input type="text" name="email" value="<?php echo $email; ?>"><br>
+		<?php echo $emailErr.$valid_email_konfirm_msg; ?><br/>
 <p>ID LINE :</p>
 <input type="text" name="line"><br/>
 <p>Instagram :</p>
