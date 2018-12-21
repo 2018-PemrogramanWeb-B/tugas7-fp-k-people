@@ -5,6 +5,11 @@
 <?php
 include 'koneksi.php';
 
+$email ="";
+$emailErr = "";
+$email_valid = true;
+$valid_email_konfirm_msg = "";
+
 if (@$_POST['btn-event']) {
 
   $nama = $_POST['nama'];
@@ -13,20 +18,20 @@ if (@$_POST['btn-event']) {
   $deskripsi = $_POST['deskripsi'];
   $cp = $_POST['cp'];
   $email = $_POST['email'];
+  if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $email_valid = false;
+    $valid_email_konfirm_msg = "Format email salah.<br>"; 
+  }
   $folder = './img_event/';
   $name_p = $_FILES['foto']['name'];
   $sumber_p = $_FILES['foto']['tmp_name'];
   move_uploaded_file($sumber_p,$folder.$name_p);
+  if($email_valid){
   mysqli_query($connect, "INSERT INTO event (nama,tanggal,lokasi,deskripsi,cp,email,foto) VALUES ('$nama','$tanggal','$lokasi','$deskripsi','$cp','$email','.$name_p.')");
-
-?>
-<script type="text/javascript">
-  alert("Event berhasil terdaftar. Tunggu Email dari kami yaaa!");
-  window.location.href="indexkuy.php"
-
-</script>
-
-<?php  }
+  unset($_POST);
+  unset($_POST['email']);  
+}
+ }
  ?>
 
 
@@ -109,7 +114,8 @@ if (@$_POST['btn-event']) {
 <p>Contact Person :</p>
 <input type="text" name="cp"><br/>
 <p>Email :</p>
-<input type="text" name="email"><br/>
+<input type="text" name="email" value="<?php echo $email; ?>"><br>
+		<?php echo $emailErr.$valid_email_konfirm_msg; ?><br/>
 <p>Poster :</p>
 <input type="file" name="foto"><br/>
 <input type="submit" name="btn-event" value="Kirim">
